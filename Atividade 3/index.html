@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 2 – Privacidade e Segurança</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Privacidade e Segurança</h1>
+      <nav>
+        <ul>
+          <li><a href="#introducao">Introdução</a></li>
+          <li><a href="#autenticacao">Autenticação</a></li>
+          <li><a href="#xss-csrf">XSS & CSRF</a></li>
+          <li><a href="#seo">SEO</a></li>
+          <li><a href="#boas-praticas">Boas Práticas</a></li>
+          <li><a href="#conclusao">Conclusão</a></li>
+          <li><a href="#referencias">Referências</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Atividade 2 – Privacidade e Segurança</h2>
+      <p>Explorando autenticação segura, proteção contra vulnerabilidades e boas práticas para aplicações web modernas.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <article id="introducao">
+      <h2>Introdução</h2>
+      <p>A privacidade e a segurança da informação são pilares essenciais no desenvolvimento de aplicações modernas, garantindo a proteção de dados pessoais, a integridade dos sistemas e a confiança nas comunicações digitais. Para enfrentar o aumento dos ataques cibernéticos, é imprescindível adotar mecanismos de autenticação robustos, como OAuth e JSON Web Tokens (JWT), bem como implementar estratégias eficazes contra vulnerabilidades como XSS (Cross-Site Scripting) e CSRF (Cross-Site Request Forgery). Paralelamente, práticas de SEO (Search Engine Optimization) asseguram não apenas maior visibilidade e relevância das páginas na web, mas também reforçam a credibilidade de organizações comprometidas com ambientes virtuais seguros. Essa integração entre autenticação, proteção contra ameaças e otimização de presença digital oferece uma base sólida para aplicações confiáveis, seguras e bem posicionadas no mercado.</p>
+    </article>
+
+    <article id="autenticacao">
+      <h2>Autenticação e Autorização Segura</h2>
+
+      <h3>OAuth 2.0</h3>
+      <p>O OAuth é um protocolo de autorização que permite que aplicações acessem recursos protegidos de forma segura, sem a necessidade de expor as credenciais do usuário. Ele delega a autenticação para um servidor confiável e retorna um token de acesso com permissões específicas, garantindo que terceiros possam interagir com os serviços de forma controlada. Este protocolo é amplamente utilizado em integrações com redes sociais e outros serviços de terceiros, permitindo operações seguras entre sistemas.</p>
+      <div class="card vantagem">
+        <strong>Vantagens:</strong>
+        <p>Segurança, flexibilidade e ampla adoção por grandes provedores, como Google, Facebook e GitHub.</p>
+      </div>
+      <div class="card desvantagem">
+        <strong>Desvantagem:</strong>
+        <p>Implementação complexa, exigindo atenção especial ao fluxo de tokens e permissões.</p>
+      </div>
+
+      <h3>JWT (JSON Web Token)</h3>
+      <p>O JWT é um padrão para representar informações de forma compacta, segura e assinada digitalmente, permitindo autenticação stateless, especialmente útil para APIs RESTful. Ele possibilita que servidores validem requisições sem a necessidade de armazenar sessões no back-end, mantendo a integridade e autenticidade dos dados.</p>
+      <div class="card vantagem">
+        <strong>Vantagens:</strong>
+        <p>Escalabilidade, leveza e independência de sessão.</p>
+      </div>
+      <div class="card desvantagem">
+        <strong>Desvantagem:</strong>
+        <p>Dificuldade de revogação e risco caso o token seja exposto.</p>
+      </div>
+
+      <h3>Outras formas de autenticação</h3>
+      <p>Além do OAuth e do JWT, existem outras formas de autenticação, como API Keys e Basic Authentication. As API Keys são simples e rápidas de implementar, porém oferecem segurança reduzida e delegação limitada, sendo mais adequadas para aplicações internas ou de baixo risco. A Basic Authentication, por sua vez, é antiquada e fácil de implementar, mas apresenta vulnerabilidades significativas se utilizada sem HTTPS e não oferece flexibilidade para gerenciamento de permissões e roles.</p>
+    </article>
+
+    <article id="xss-csrf">
+      <h2>Proteção contra Vulnerabilidades Web: XSS e CSRF</h2>
+
+      <h3>XSS (Cross-Site Scripting)</h3>
+      <p>O XSS consiste na injeção de scripts maliciosos em páginas web, permitindo que um atacante execute ações não autorizadas ou acesse informações sensíveis, como tokens de autenticação e dados pessoais. Essa vulnerabilidade compromete a integridade e a privacidade das aplicações, sendo uma das ameaças mais frequentes em ambientes web modernos.</p>
+      <div class="card boas-praticas">
+        <strong>Boas práticas:</strong>
+        <p>Validação rigorosa de entradas, sanitização de dados e uso de Content Security Policy (CSP).</p>
+      </div>
+
+      <h3>CSRF (Cross-Site Request Forgery)</h3>
+      <p>O CSRF ocorre quando um site malicioso induz o navegador de um usuário autenticado a executar ações indesejadas em um sistema confiável, explorando a confiança que o servidor deposita no navegador. Essa vulnerabilidade pode resultar em alterações de dados ou execução de operações sem consentimento do usuário.</p>
+      <div class="card boas-praticas">
+        <strong>Boas práticas:</strong>
+        <p>Uso de tokens anti-CSRF, verificação de headers de origem e cookies com flag SameSite.</p>
+      </div>
+    </article>
+
+    <article id="seo">
+      <h2>SEO (Search Engine Optimization): Visibilidade e Competitividade</h2>
+
+      <h3>Importância do SEO</h3>
+      <p>O SEO é essencial para aumentar a visibilidade de sites e aplicações, permitindo que conteúdos relevantes sejam encontrados nos principais mecanismos de busca. Além disso, contribui para a relevância, ao atrair o público-alvo adequado no momento correto, e fortalece a competitividade, destacando a organização em um ambiente digital altamente saturado.</p>
+
+      <h3>Fatores principais de SEO</h3>
+      <h4>Conteúdo Otimizado (On-Page)</h4>
+      <p>A criação de conteúdo otimizado envolve o uso de palavras-chave relevantes, títulos bem estruturados (H1-H6), URLs amigáveis, meta-tags precisas e textos originais, úteis e atualizados.</p>
+
+      <h4>Estrutura Técnica</h4>
+      <p>A otimização técnica compreende a implementação de URLs limpas, tempo de carregamento rápido, design mobile-first e uso correto de tags HTML.</p>
+
+      <h4>Backlinks (Off-Page SEO)</h4>
+      <p>Links provenientes de sites confiáveis reforçam a autoridade do domínio, aumentando a credibilidade do conteúdo.</p>
+
+      <h3>Benefícios</h3>
+      <div class="card vantagem">
+        <strong>Benefícios:</strong>
+        <p>Aumento de tráfego orgânico, redução de gastos com anúncios pagos e fortalecimento da credibilidade digital.</p>
+      </div>
+    </article>
+
+    <article id="boas-praticas">
+      <h2>Boas Práticas Complementares em APIs</h2>
+      <p>Para garantir segurança, desempenho e confiabilidade em APIs, é fundamental adotar boas práticas complementares que reforcem os mecanismos de autenticação e proteção já discutidos.</p>
+
+      <div class="card boas-praticas">
+        <strong>Validação de Entrada e Sanitização:</strong>
+        <p>Uso de bibliotecas como Joi ou queries parametrizadas para evitar SQL Injection e XSS.</p>
+      </div>
+
+      <div class="card boas-praticas">
+        <strong>Rate Limiting e Throttling:</strong>
+        <p>Limitar requisições excessivas e prevenir abusos e ataques DDoS.</p>
+      </div>
+
+      <div class="card boas-praticas">
+        <strong>CORS e Segurança em APIs:</strong>
+        <p>Configurar corretamente origens e métodos permitidos para evitar exposição indevida.</p>
+      </div>
+
+      <div class="card boas-praticas">
+        <strong>Registro e Monitoramento:</strong>
+        <p>Uso de ferramentas como ELK, Prometheus e Grafana para monitoramento contínuo.</p>
+      </div>
+
+      <div class="card boas-praticas">
+        <strong>Versionamento e Cache:</strong>
+        <p>Versionar APIs e usar cache (Redis, CDN) para escalabilidade.</p>
+      </div>
+
+      <div class="card boas-praticas">
+        <strong>Testes Automatizados e Documentação:</strong>
+        <p>Uso de Swagger, Postman e Pytest para manter qualidade e confiabilidade.</p>
+      </div>
+    </article>
+
+    <article id="conclusao">
+      <h2>Conclusão</h2>
+      <p>A segurança digital e a otimização para mecanismos de busca constituem forças complementares, essenciais para o sucesso de aplicações web modernas. A implementação adequada de protocolos de autenticação, como OAuth 2.0 e JWT, garante acesso seguro e eficiente aos recursos, enquanto a mitigação de vulnerabilidades, como XSS e CSRF, protege a integridade das aplicações e a privacidade dos usuários.</p>
+      <p>Paralelamente, práticas de SEO asseguram visibilidade, relevância e competitividade, permitindo que conteúdos confiáveis e seguros alcancem o público-alvo de maneira eficiente.</p>
+      <p>Adicionalmente, a adoção de boas práticas em APIs — incluindo validação e sanitização de entradas, rate limiting e throttling, configuração adequada de CORS, monitoramento e registro de logs, versionamento, cache, testes automatizados e documentação clara — contribui para a segurança, escalabilidade e confiabilidade técnico-operacional das aplicações.</p>
+      <p>Dessa forma, a combinação de autenticação robusta, proteção contra vulnerabilidades, otimização digital e boas práticas de desenvolvimento de APIs estabelece uma base sólida para aplicações seguras, confiáveis e de alto desempenho em ambientes digitais altamente competitivos.</p>
+    </article>
+
+    <article id="referencias">
+      <h2>Referências</h2>
+      <ul>
+        <li><a href="https://skillstecnologicas.com/autenticacao-em-apis/">Skills Tecnológicas – Autenticação em APIs</a></li>
+        <li><a href="https://devsjava.com/">DevsJava – Guia Prático de OAuth 2.0 e JWT</a></li>
+        <li><a href="https://apibrasil.com.br/">API Brasil – Segurança em APIs e Tokens JWT</a></li>
+        <li><a href="https://www.jwt.io/introduction">JWT.io – Introduction to JSON Web Tokens</a></li>
+        <li><a href="https://skipp.com.br/guia-seo/">Skipp – Guia SEO</a></li>
+        <li><a href="https://www.fortinet.com/br/resources/cyberglossary/oauth">Fortinet – Glossário OAuth</a></li>
+        <li><a href="https://blog.accurate.com.br/seguranca-e-privacidade-no-mundo-digital/#O_que_sao_Seguranca_e_Privacidade_no_Mundo_Digital">Accurate Blog – Segurança e Privacidade</a></li>
+        <li><a href="https://www.seo.com/pt-br/blog/why-is-seo-important/">SEO.com – Importância do SEO</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer>
+    <p>Thiago Enzo Kagiyama Corrêa – Fatec Sorocaba – 2025</p>
+  </footer>
+</body>
+</html>
