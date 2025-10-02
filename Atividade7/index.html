@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo Pedra, Papel e Tesoura</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .opcoes {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 20px 0;
+    }
+    .opcoes button {
+      font-size: 60px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .opcoes button:hover {
+      transform: scale(1.2);
+    }
+    #resultado {
+      font-size: 20px;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+    #computadorEscolha {
+      font-size: 60px;
+      margin-top: 20px;
+      height: 70px;
+    }
+    .placar {
+      margin-top: 30px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    button.reset {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      background: #ff5555;
+      color: white;
+    }
+    button.reset:hover {
+      background: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pedra, Papel e Tesoura</h1>
+  <p>Escolha uma opção:</p>
+
+  <div class="opcoes">
+    <button onclick="jogar('pedra')">🪨</button>
+    <button onclick="jogar('papel')">📄</button>
+    <button onclick="jogar('tesoura')">✂️</button>
+  </div>
+
+  <div id="resultado"></div>
+  <div id="computadorEscolha"></div>
+
+  <div class="placar">
+    Jogador: <span id="pontosJogador">0</span> |
+    Computador: <span id="pontosComputador">0</span>
+  </div>
+
+  <button class="reset" onclick="resetar()">🔄 Resetar Placar</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
