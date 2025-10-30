@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 12 - Objetos e Classes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fa;
+      color: #222;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #005b96;
+      margin-bottom: 30px;
+    }
+    button {
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #005b96;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Atividade 12</h1>
+
+  <p>Escolha o exercício para executar:</p>
+  <button onclick="executarRetangulo()"> Retângulo</button>
+  <button onclick="executarConta()"> Conta Bancária</button>
+
+  <footer>Desenvolvido por: <strong>Thiago</strong> — Fatec Sorocaba</footer>
+
+  <script>
+    function Retangulo(x, y) {
+        this.base = x;
+        this.altura = y;
+        this.calcularArea = function() {
+            return this.base * this.altura;
+        };
+    }
+
+    function executarRetangulo() {
+        var base = parseFloat(prompt("Informe a base do retângulo:"));
+        var altura = parseFloat(prompt("Informe a altura do retângulo:"));
+        var ret = new Retangulo(base, altura);
+        alert(`Base = ${ret.base}\nAltura = ${ret.altura}\nÁrea = ${ret.calcularArea()}`);
+    }
+
+    class Conta {
+        constructor() {
+            this._nome;
+            this._banco;
+            this._numeroConta;
+            this._saldo = 0;
+        }
+
+        setNome(value) { 
+            this._nome = value; 
+        }
+
+        getNome() {
+            return this._nome;
+        }
+
+        setBanco(value) {
+            this._banco = value;
+        }
+
+        getBanco() {
+            return this._banco;
+        }
+
+        setNumeroConta(value) {
+            this._numeroConta = value;
+        }
+
+        getNumeroConta() {
+            return this._numeroConta;
+        }
+    
+        setSaldo(value) {
+            this._saldo = parseFloat(value);
+        }
+
+        getSaldo() {
+            return this._saldo;
+        }
+    }
+
+    class Corrente extends Conta {
+        constructor() {
+            super();
+            this._saldoEspecial = 0;
+        }
+
+        setSaldoEspecial(value) {
+            this._saldoEspecial = parseFloat(value);
+        }
+
+        getSaldoEspecial() {
+            return this._saldoEspecial;
+        }
+    }
+
+    class Poupanca extends Conta {
+        constructor() {
+            super();
+            this._juros = 0;
+            this._dataVencimento = "";
+        }
+        setJuros(value) {
+            this._juros = parseFloat(value);
+        }
+        getJuros() {
+            return this._juros;
+        }
+        setDataVencimento(value) {
+            this._dataVencimento = value;
+        }
+        getDataVencimento() {
+            return this._dataVencimento;
+        }
+    }
+
+    function executarConta() {
+        var contaC = new Corrente();
+        contaC.setNome(prompt("Nome do correntista (Conta Corrente):"));
+        contaC.setBanco(prompt("Banco:"));
+        contaC.setNumeroConta(prompt("Número da conta:"));
+        contaC.setSaldo(prompt("Saldo atual:"));
+        contaC.setSaldoEspecial(prompt("Saldo especial:"));
+
+        alert(
+            `--- CONTA CORRENTE ---
+            Nome: ${contaC.getNome()}
+            Banco: ${contaC.getBanco()}
+            Conta: ${contaC.getNumeroConta()}
+            Saldo: R$ ${contaC.getSaldo()}
+            Saldo Especial: R$ ${contaC.getSaldoEspecial()}`);
+
+        var contaP = new Poupanca();
+        contaP.setNome(prompt("Nome do correntista (Conta Poupança):"));
+        contaP.setBanco(prompt("Banco:"));
+        contaP.setNumeroConta(prompt("Número da conta:"));
+        contaP.setSaldo(prompt("Saldo atual:"));
+        contaP.setJuros(prompt("Juros (%):"));
+        contaP.setDataVencimento(prompt("Data de vencimento:"));
+
+        alert(
+            `--- CONTA POUPANÇA ---
+            Nome: ${contaP.getNome()}
+            Banco: ${contaP.getBanco()}
+            Conta: ${contaP.getNumeroConta()}
+            Saldo: R$ ${contaP.getSaldo()}
+            Juros: ${contaP.getJuros()}%
+            Vencimento: ${contaP.getDataVencimento()}`);
+    }
+  </script>
+</body>
+</html>
