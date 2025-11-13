@@ -1,0 +1,20 @@
+1. Guarulhos
+2. Osasco
+3. Santo André
+4. São Bernardo do Campo
+5. São Caetano do Sul
+6. Mogi das Cruzes
+7. Suzano
+8. Itaquaquecetuba
+9. Barueri
+10. Carapicuíba
+11. Taboão da Serra
+12. Cotia
+13. Embu das Artes
+14. Diadema
+15. Jundiaí
+16. Campinas
+17. Atibaia
+18. São Roque
+19. Franco da Rocha
+20. Itapevi
